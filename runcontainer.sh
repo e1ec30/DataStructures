@@ -1,0 +1,1 @@
+docker run -v $PWD/volume:/root -it --rm datastructures

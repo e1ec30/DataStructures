@@ -1,0 +1,11 @@
+/root/release-f22/lab_debug/build/CMakeFiles/test.dir
+/root/release-f22/lab_debug/build/CMakeFiles/main.dir
+/root/release-f22/lab_debug/build/CMakeFiles/edit_cache.dir
+/root/release-f22/lab_debug/build/CMakeFiles/rebuild_cache.dir
+/root/release-f22/lab_debug/build/lib/CMakeFiles/lodepng.dir
+/root/release-f22/lab_debug/build/lib/CMakeFiles/cs225.dir
+/root/release-f22/lab_debug/build/lib/CMakeFiles/edit_cache.dir
+/root/release-f22/lab_debug/build/lib/CMakeFiles/rebuild_cache.dir
+/root/release-f22/lab_debug/build/src/CMakeFiles/src.dir
+/root/release-f22/lab_debug/build/src/CMakeFiles/edit_cache.dir
+/root/release-f22/lab_debug/build/src/CMakeFiles/rebuild_cache.dir
