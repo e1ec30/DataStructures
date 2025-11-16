@@ -1,0 +1,47 @@
+[
+{
+  "directory": "/workspace/release-f22/mp_stickers/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_stickers/lib -I/workspace/release-f22/mp_stickers/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/test.dir/tests/tests-part1.cpp.o -c /workspace/release-f22/mp_stickers/tests/tests-part1.cpp",
+  "file": "/workspace/release-f22/mp_stickers/tests/tests-part1.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_stickers/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_stickers/lib -I/workspace/release-f22/mp_stickers/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/test.dir/tests/tests-part2.cpp.o -c /workspace/release-f22/mp_stickers/tests/tests-part2.cpp",
+  "file": "/workspace/release-f22/mp_stickers/tests/tests-part2.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_stickers/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_stickers/lib -I/workspace/release-f22/mp_stickers/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/main.dir/entry/main.cpp.o -c /workspace/release-f22/mp_stickers/entry/main.cpp",
+  "file": "/workspace/release-f22/mp_stickers/entry/main.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_stickers/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_stickers/lib -I/workspace/release-f22/mp_stickers/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/testimage.dir/entry/testimage.cpp.o -c /workspace/release-f22/mp_stickers/entry/testimage.cpp",
+  "file": "/workspace/release-f22/mp_stickers/entry/testimage.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_stickers/build/lib",
+  "command": "/usr/bin/clang++    -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o -c /workspace/release-f22/mp_stickers/lib/lodepng/lodepng.cpp",
+  "file": "/workspace/release-f22/mp_stickers/lib/lodepng/lodepng.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_stickers/build/lib",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_stickers/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o -c /workspace/release-f22/mp_stickers/lib/cs225/HSLAPixel.cpp",
+  "file": "/workspace/release-f22/mp_stickers/lib/cs225/HSLAPixel.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_stickers/build/lib",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_stickers/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/cs225.dir/cs225/PNG.cpp.o -c /workspace/release-f22/mp_stickers/lib/cs225/PNG.cpp",
+  "file": "/workspace/release-f22/mp_stickers/lib/cs225/PNG.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_stickers/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_stickers/src -I/workspace/release-f22/mp_stickers/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/Image.cpp.o -c /workspace/release-f22/mp_stickers/src/Image.cpp",
+  "file": "/workspace/release-f22/mp_stickers/src/Image.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_stickers/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_stickers/src -I/workspace/release-f22/mp_stickers/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/StickerSheet.cpp.o -c /workspace/release-f22/mp_stickers/src/StickerSheet.cpp",
+  "file": "/workspace/release-f22/mp_stickers/src/StickerSheet.cpp"
+}
+]

@@ -1,2 +1,2 @@
-volume/.local/**
-volume/.cache/**
+.local/**
+.cache/**
