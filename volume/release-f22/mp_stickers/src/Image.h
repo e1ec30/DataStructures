@@ -11,6 +11,10 @@ public:
 	Image(): cs225::PNG() {};
 	Image(unsigned w, unsigned h) : cs225::PNG(w, h) {};
 	Image(const Image& other) : cs225::PNG(other) {};
+	const Image& operator=(const Image &other) {
+		cs225::PNG::operator=(other);
+		return *this;
+	}
 	void lighten();
 	void lighten(double amount);
 

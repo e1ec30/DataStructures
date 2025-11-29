@@ -12,6 +12,13 @@ void Image::lighten(double amount) {
 	}
 }
 
+void Image::lighten() {}
+void Image::saturate() {}
+void Image::desaturate() {}
+void Image::illinify() {}
+void Image::rotateColor(double) {}
+void Image::darken(double) {}
+
 void Image::saturate(double amount) {
 	for (unsigned x = 0; x < width(); x++) {
 		for (unsigned y = 0; y < height(); y++) {
