@@ -31,7 +31,7 @@ private:
 		unsigned y;
 	};
 
-	void _copy(const StickerSheet &other);
 	std::vector<Sticker> sheet;
 	Image base;
+	unsigned max;
 };

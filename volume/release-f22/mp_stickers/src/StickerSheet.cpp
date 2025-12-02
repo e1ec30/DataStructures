@@ -1,13 +1,15 @@
 #include <StickerSheet.h>
 
-StickerSheet::StickerSheet(const Image &picture, unsigned max) : sheet(max), base(picture) {} 
+StickerSheet::StickerSheet(const Image &picture, unsigned m) : base(picture), max(m) {} 
 
 void StickerSheet::changeMaxStickers(unsigned max) {
-	sheet.resize(max);
+	if (sheet.size() > max) sheet.resize(max);
+	else (sheet.reserve(max));
+	this->max = max;
 }
 
 int StickerSheet::addSticker(Image &sticker, unsigned x, unsigned y) {
-	if (sheet.size() == sheet.capacity()) return -1;
+	if (sheet.size() == max) return -1;
 
 	Sticker *s = new Sticker {
 		&sticker,
@@ -57,11 +59,43 @@ const StickerSheet& StickerSheet::operator=(const StickerSheet &other) {
 	return *this;
 }
 
+void copy_onto(Image *base, Image *sticker, unsigned x, unsigned y) {
+	unsigned new_width = base->width(), new_height = base->height();
+	if (base->width() < (sticker->width() + x)) {
+		new_width = (x + sticker->width());
+	}
+
+	if (base->height() < (sticker->height() + y)) {
+		new_height = (y + sticker->height());
+	}
+
+	if ((new_width != base->width()) || (new_height != base->height())) {
+		base->resize(new_width, new_height);
+	}
+
+	for (unsigned xs = 0; xs < sticker->width(); xs++) {
+		for (unsigned ys = 0; ys < sticker->height(); ys++) {
+			auto &src_p = sticker->getPixel(xs, ys);
+			auto &dst_p = base->getPixel(x + xs, y + ys);
+
+			if (src_p.a != 0) {
+				dst_p.h = src_p.h;
+				dst_p.s = src_p.s;
+				dst_p.l = src_p.l;
+				dst_p.a = src_p.a;
+			}
+		}
+	}
+
+}
 Image StickerSheet::render() const {
 	// First, an image as big as the base Image
 	Image ret(base);
 
-	// Next, go through each sticker and copy it on the base if it will fit, otherwise resize the base
+	// Next, go through each sticker and copy it on the base if it will fit, otherwise resize the base first
+	for (auto s : sheet) {
+		copy_onto(&ret, s.sticker, s.x, s.y);
+	}
 
 	return ret;
 }
