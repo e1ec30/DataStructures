@@ -42,8 +42,8 @@ void sketchify(std::string inputFile, std::string outputFile) {
     unsigned height = original->height();
 
     // Create out.png
-    PNG* output = new PNG();
-    setupOutput(width, height);
+    // PNG* output = new PNG();
+    PNG *output = setupOutput(width, height);
 
     // Load our favorite color to color the outline
     HSLAPixel* myPixel = myFavoriteColor();
