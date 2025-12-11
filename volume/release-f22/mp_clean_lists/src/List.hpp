@@ -115,7 +115,7 @@ typename List<T>::ListNode * List<T>::split(ListNode * start, int splitPoint) {
   /// @todo Graded in MP3.1
   ListNode * curr = start;
 
-  for (int i = 0; i < splitPoint || curr != NULL; i++) {
+  for (int i = 0; i < splitPoint && curr != NULL; i++) {
     curr = curr->next;
   }
 
@@ -124,7 +124,7 @@ typename List<T>::ListNode * List<T>::split(ListNode * start, int splitPoint) {
       curr->prev = NULL;
   }
 
-  return NULL;
+  return curr;
 }
 
 /**
@@ -140,6 +140,33 @@ typename List<T>::ListNode * List<T>::split(ListNode * start, int splitPoint) {
 template <typename T>
 void List<T>::tripleRotate() {
   // @todo Graded in MP3.1
+  ListNode *cur;
+  cur = head_;
+  while ((cur != NULL) && (cur->next != NULL) && (cur->next->next != NULL)) {
+    ListNode *p = cur->prev;
+    ListNode *n = cur->next;
+    ListNode *nn = n->next;
+    ListNode *f = nn->next;
+
+    // if (p != NULL) std::cout << p->data;
+    // std::cout << " " << cur->data << " " << n->data << " " << nn->data << " ";
+    // if (f != NULL) std::cout << f->data;
+    // std::cout << "\n";
+
+    n->next = nn;
+    n->prev = p;
+
+    nn->next = cur;
+    nn->prev = n;
+
+    cur->prev = nn;
+    cur->next = f;
+
+    if (p == NULL) head_ = n; else p->next = n;
+    if (f == NULL) tail_ = cur; else f->prev = cur;
+
+    cur = cur->next;
+  }
 }
 
 
