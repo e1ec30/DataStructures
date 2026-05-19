@@ -3,6 +3,7 @@
  * Doubly Linked List (MP 3).
  */
 
+#include <cstdio>
 template <class T>
 List<T>::List() { 
   // @TODO: graded in MP3.1
@@ -37,7 +38,7 @@ typename List<T>::ListIterator List<T>::end() const {
  */
 template <typename T>
 void List<T>::_destroy() {
-  /// @todo Graded in MP3.1
+  /// @TODO Graded in MP3.1
 
   ListNode *cur = head_;
   while (cur != NULL) {
@@ -57,7 +58,7 @@ void List<T>::_destroy() {
  */
 template <typename T>
 void List<T>::insertFront(T const & ndata) {
-  /// @todo Graded in MP3.1
+  /// @TODO Graded in MP3.1
   ListNode * newNode = new ListNode(ndata);
   newNode -> next = head_;
   newNode -> prev = NULL;
@@ -193,15 +194,23 @@ template <typename T>
 void List<T>::reverse(ListNode *& startPoint, ListNode *& endPoint) {
   /// @todo Graded in MP3.2
   ListNode *prev = NULL;
-  ListNode *curr = startPoint;
 
-  while (curr != nullptr) {
+  // Start from the tail
+  ListNode *curr = endPoint;
+  ListNode *stop = startPoint->prev;
+
+  while (curr != stop) {
+    // For each node, we swap its prev and next pointers
       prev = curr->prev;
       curr->prev = curr->next;
       curr->next = prev;
-      curr = curr->prev;
+      curr = prev;
   }
-  startPoint = prev->prev;
+
+  // Now we swap the tail and the head
+  curr = startPoint;
+  startPoint = endPoint;
+  endPoint = curr;
 }
 
 /**
@@ -212,7 +221,62 @@ void List<T>::reverse(ListNode *& startPoint, ListNode *& endPoint) {
  */
 template <typename T>
 void List<T>::reverseNth(int n) {
-  /// @todo Graded in MP3.2
+  /// @TODO Graded in MP3.2
+
+  ListNode* curr = head_;
+  int i = 0;
+
+  while(curr) {
+    // printf("head_->next: %p\n", (void*)head_->next);
+    ListNode *prev = curr->prev;
+    // std::cout << (curr->data) << std::endl;
+
+    // print(std::cout);
+    // std::cout << std::endl;
+
+    ListNode *end = curr;
+    
+    for (i = 1; (i < n) && (end->next != NULL); i++) {
+      // std::cout << "i: " << i << ", n: " << n <<", end->next: "<< end->next << std::endl;
+      // printf("i: %d, n: %d, end->next: %p\n", i, n, (void*)end->next);
+      end = end->next;
+    } // count n nodes
+    // puts("");
+    // printf("i: %d, n: %d, end->next: %p\n\n", i, n, (void*)end->next);
+    // std::cout << "i: " << i << ", n: " << n <<", end->next: "<< end->next << std::endl << std::endl;
+    if (i < n) return; // if we don't find enough blocks, we're done
+    ListNode *next = end->next;
+
+    // printf("%d->%d->%d\n", curr->data, curr->next ? curr->next->data : 1337, curr->next->next ? curr->next->next->data : 1337);
+
+    // if (prev) printf("prev: %p: %d->%d\n", (void*)prev, prev->data, prev->next->data);    
+    // if (next) printf("next: %p: %d<-%d\n", (void*)next, next->prev->data, next->data);    
+    // printf("Before reversing: curr: %p, end: %p\n", (void*)curr, (void*)end);
+    reverse(curr, end);
+    // printf("After reversing: curr: %p, end: %p\n", (void*)curr, (void*)end);
+
+    if (head_ == end) {
+      head_ = curr;
+    }
+
+    // printf("%d->%d->%d\n", curr->data, curr->next ? curr->next->data : 1337, curr->next->next ? curr->next->next->data : 1337);
+
+    if(prev) {
+      prev->next = curr;
+    }
+
+    // if (prev) printf("prev: %p: %d->%d\n", (void*)prev, prev->data, prev->next->data);    
+    curr->prev = prev;
+
+    if (next) {
+      next->prev = end;
+    }
+    // if (next) printf("next: %p: %d<-%d\n", (void*)next, next->prev->data, next->data);    
+    end->next = next;
+    // if (curr) curr->next = next;
+
+    curr = next;
+  }
 }
 
 
