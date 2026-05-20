@@ -4,6 +4,7 @@
  */
 
 #include <cstdio>
+#include <cmath>
 template <class T>
 List<T>::List() { 
   // @TODO: graded in MP3.1
@@ -226,6 +227,12 @@ void List<T>::reverseNth(int n) {
   ListNode* curr = head_;
   int i = 0;
 
+  if (n <= 1) return;
+  if (n >= length_) {
+    reverse(head_, tail_);
+    return;
+  }
+
   while(curr) {
     // printf("head_->next: %p\n", (void*)head_->next);
     ListNode *prev = curr->prev;
@@ -255,8 +262,14 @@ void List<T>::reverseNth(int n) {
     reverse(curr, end);
     // printf("After reversing: curr: %p, end: %p\n", (void*)curr, (void*)end);
 
+    //if a rotation involved the head, correct it.
     if (head_ == end) {
       head_ = curr;
+    }
+
+    //if it involved the tail, also correct it.
+    if (tail_ == end) {
+      tail_ = curr;
     }
 
     // printf("%d->%d->%d\n", curr->data, curr->next ? curr->next->data : 1337, curr->next->next ? curr->next->next->data : 1337);
@@ -318,6 +331,41 @@ void List<T>::mergeWith(List<T> & otherList) {
 template <typename T>
 typename List<T>::ListNode * List<T>::merge(ListNode * first, ListNode* second) {
   /// @todo Graded in MP3.2
+  ListNode *p1 = first;
+  ListNode *p2 = second;
+  ListNode *curr = NULL;
+  ListNode *newhead_ = NULL;
+
+  if(p1->data < p2->data) {
+    newhead_ = p1;
+    p1 = p1->next;
+  }
+  else {
+    newhead_ = p2;
+    p2 = p2->next;
+  }
+  
+  curr = newhead_;
+  while (p1 && p2) {
+    if (p1->data < p2->data) {
+      curr->next = p1;
+      p1->prev = curr;
+      p1 = p1->next;
+      curr = curr->next;
+    }
+    else {
+      curr->next = p2;
+      p2->prev = curr;
+      p2 = p2->next;
+      curr = curr->next;
+    }
+  }
+
+  //if one list has finished, we just join the rest of the other to the end of the chain
+  if (p1) curr->next = p1;
+  else if (p2) curr->next = p2;
+  return newhead_;
+
   return NULL;
 }
 
@@ -335,5 +383,18 @@ typename List<T>::ListNode * List<T>::merge(ListNode * first, ListNode* second) 
 template <typename T>
 typename List<T>::ListNode* List<T>::mergesort(ListNode * start, int chainLength) {
   /// @todo Graded in MP3.2
-  return NULL;
+
+  //base case
+  if (chainLength <= 1) return start;
+
+  int splitPoint = std::floor(chainLength/2);
+
+  ListNode *h1 = start;
+  ListNode *h2 = split(start, splitPoint);
+
+  ListNode *r1 = mergesort(h1, splitPoint);
+  ListNode *r2 = mergesort(h2, chainLength-splitPoint);
+  
+  return merge(r1, r2);
+
 }
