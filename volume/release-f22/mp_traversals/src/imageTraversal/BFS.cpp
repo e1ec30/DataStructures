@@ -22,8 +22,9 @@ using namespace cs225;
  * @param tolerance If the current point is too different (difference larger than tolerance) with the start point,
  * it will not be included in this BFS
  */
-BFS::BFS(const PNG & png, const Point & start, double tolerance) {  
+BFS::BFS(const PNG & png, const Point & start, double tolerance) : png_(&png), start_(start), tolerance_(tolerance), queue_() {  
   /** @todo [Part 1] */
+ add(start_);
 }
 
 /**
@@ -31,7 +32,7 @@ BFS::BFS(const PNG & png, const Point & start, double tolerance) {
  */
 ImageTraversal::Iterator BFS::begin() {
   /** @todo [Part 1] */
-  return ImageTraversal::Iterator();
+  return ImageTraversal::Iterator((ImageTraversal*)(new BFS(*png_, start_, tolerance_)), false);
 }
 
 /**
@@ -39,7 +40,7 @@ ImageTraversal::Iterator BFS::begin() {
  */
 ImageTraversal::Iterator BFS::end() {
   /** @todo [Part 1] */
-  return ImageTraversal::Iterator();
+  return ImageTraversal::Iterator(NULL, true);
 }
 
 /**
@@ -47,6 +48,10 @@ ImageTraversal::Iterator BFS::end() {
  */
 void BFS::add(const Point & point) {
   /** @todo [Part 1] */
+  if (point.x >= png_->width()) return;
+  if (point.y >= png_->height()) return;
+  if (ImageTraversal::calculateDelta(*png_, point, start_) >= tolerance_) return;
+  queue_.push(point);
 }
 
 /**
@@ -54,7 +59,10 @@ void BFS::add(const Point & point) {
  */
 Point BFS::pop() {
   /** @todo [Part 1] */
-  return Point(0, 0);
+  Point p = queue_.front();
+  queue_.pop();
+
+  return p;
 }
 
 /**
@@ -62,7 +70,7 @@ Point BFS::pop() {
  */
 Point BFS::peek() const {
   /** @todo [Part 1] */
-  return Point(0, 0);
+  return queue_.front();
 }
 
 /**
@@ -70,5 +78,5 @@ Point BFS::peek() const {
  */
 bool BFS::empty() const {
   /** @todo [Part 1] */
-  return true;
+  return queue_.empty();
 }

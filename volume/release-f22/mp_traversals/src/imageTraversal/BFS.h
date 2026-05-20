@@ -8,6 +8,7 @@
 #include <cmath>
 #include <list>
 #include <queue>
+#include <set>
 
 #include "cs225/PNG.h"
 #include "../Point.h"
@@ -35,4 +36,8 @@ public:
 private:
   /** @todo [Part 1] */
   /** add private members here*/
+  const PNG *png_;
+  const Point start_;
+  double tolerance_;
+  std::queue<Point> queue_;
 };

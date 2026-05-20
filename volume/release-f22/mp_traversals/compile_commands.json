@@ -1,0 +1,97 @@
+[
+{
+  "directory": "/workspace/release-f22/mp_traversals/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/lib -I/workspace/release-f22/mp_traversals/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/test.dir/tests/tests-part1-BFS-DFS.cpp.o -c /workspace/release-f22/mp_traversals/tests/tests-part1-BFS-DFS.cpp",
+  "file": "/workspace/release-f22/mp_traversals/tests/tests-part1-BFS-DFS.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/lib -I/workspace/release-f22/mp_traversals/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/test.dir/tests/tests_part1-4x4.cpp.o -c /workspace/release-f22/mp_traversals/tests/tests_part1-4x4.cpp",
+  "file": "/workspace/release-f22/mp_traversals/tests/tests_part1-4x4.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/lib -I/workspace/release-f22/mp_traversals/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/test.dir/tests/tests_part1-8x4.cpp.o -c /workspace/release-f22/mp_traversals/tests/tests_part1-8x4.cpp",
+  "file": "/workspace/release-f22/mp_traversals/tests/tests_part1-8x4.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/lib -I/workspace/release-f22/mp_traversals/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/test.dir/tests/tests_part2.cpp.o -c /workspace/release-f22/mp_traversals/tests/tests_part2.cpp",
+  "file": "/workspace/release-f22/mp_traversals/tests/tests_part2.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/lib -I/workspace/release-f22/mp_traversals/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/main.dir/entry/main.cpp.o -c /workspace/release-f22/mp_traversals/entry/main.cpp",
+  "file": "/workspace/release-f22/mp_traversals/entry/main.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build/lib",
+  "command": "/usr/bin/clang++    -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o -c /workspace/release-f22/mp_traversals/lib/lodepng/lodepng.cpp",
+  "file": "/workspace/release-f22/mp_traversals/lib/lodepng/lodepng.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build/lib",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o -c /workspace/release-f22/mp_traversals/lib/cs225/HSLAPixel.cpp",
+  "file": "/workspace/release-f22/mp_traversals/lib/cs225/HSLAPixel.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build/lib",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/cs225.dir/cs225/PNG.cpp.o -c /workspace/release-f22/mp_traversals/lib/cs225/PNG.cpp",
+  "file": "/workspace/release-f22/mp_traversals/lib/cs225/PNG.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/src -I/workspace/release-f22/mp_traversals/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/Animation.cpp.o -c /workspace/release-f22/mp_traversals/src/Animation.cpp",
+  "file": "/workspace/release-f22/mp_traversals/src/Animation.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/src -I/workspace/release-f22/mp_traversals/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/FloodFilledImage.cpp.o -c /workspace/release-f22/mp_traversals/src/FloodFilledImage.cpp",
+  "file": "/workspace/release-f22/mp_traversals/src/FloodFilledImage.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/src -I/workspace/release-f22/mp_traversals/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/Point.cpp.o -c /workspace/release-f22/mp_traversals/src/Point.cpp",
+  "file": "/workspace/release-f22/mp_traversals/src/Point.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/src -I/workspace/release-f22/mp_traversals/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/colorPicker/GradientColorPicker.cpp.o -c /workspace/release-f22/mp_traversals/src/colorPicker/GradientColorPicker.cpp",
+  "file": "/workspace/release-f22/mp_traversals/src/colorPicker/GradientColorPicker.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/src -I/workspace/release-f22/mp_traversals/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/colorPicker/GridColorPicker.cpp.o -c /workspace/release-f22/mp_traversals/src/colorPicker/GridColorPicker.cpp",
+  "file": "/workspace/release-f22/mp_traversals/src/colorPicker/GridColorPicker.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/src -I/workspace/release-f22/mp_traversals/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/colorPicker/MyColorPicker.cpp.o -c /workspace/release-f22/mp_traversals/src/colorPicker/MyColorPicker.cpp",
+  "file": "/workspace/release-f22/mp_traversals/src/colorPicker/MyColorPicker.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/src -I/workspace/release-f22/mp_traversals/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/colorPicker/RainbowColorPicker.cpp.o -c /workspace/release-f22/mp_traversals/src/colorPicker/RainbowColorPicker.cpp",
+  "file": "/workspace/release-f22/mp_traversals/src/colorPicker/RainbowColorPicker.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/src -I/workspace/release-f22/mp_traversals/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/colorPicker/SolidColorPicker.cpp.o -c /workspace/release-f22/mp_traversals/src/colorPicker/SolidColorPicker.cpp",
+  "file": "/workspace/release-f22/mp_traversals/src/colorPicker/SolidColorPicker.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/src -I/workspace/release-f22/mp_traversals/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/imageTraversal/BFS.cpp.o -c /workspace/release-f22/mp_traversals/src/imageTraversal/BFS.cpp",
+  "file": "/workspace/release-f22/mp_traversals/src/imageTraversal/BFS.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/src -I/workspace/release-f22/mp_traversals/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/imageTraversal/DFS.cpp.o -c /workspace/release-f22/mp_traversals/src/imageTraversal/DFS.cpp",
+  "file": "/workspace/release-f22/mp_traversals/src/imageTraversal/DFS.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_traversals/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_traversals/src -I/workspace/release-f22/mp_traversals/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/imageTraversal/ImageTraversal.cpp.o -c /workspace/release-f22/mp_traversals/src/imageTraversal/ImageTraversal.cpp",
+  "file": "/workspace/release-f22/mp_traversals/src/imageTraversal/ImageTraversal.cpp"
+}
+]

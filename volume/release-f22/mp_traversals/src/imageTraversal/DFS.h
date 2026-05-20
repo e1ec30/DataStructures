@@ -4,10 +4,12 @@
 
 #pragma once
 
+#include <functional>
 #include <iterator>
 #include <cmath>
 #include <list>
 #include <stack>
+#include <set>
 
 #include "cs225/PNG.h"
 #include "../Point.h"
@@ -35,4 +37,8 @@ public:
 private:
 	/** @todo [Part 1] */
 	/** add private members here*/
+  const PNG *png_;
+  Point start_;
+  double tolerance_;
+  std::stack<Point> stack_;
 };

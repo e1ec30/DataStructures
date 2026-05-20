@@ -4,6 +4,7 @@
 #pragma once
 
 #include <iterator>
+#include <set>
 #include "cs225/HSLAPixel.h"
 #include "cs225/PNG.h"
 #include "../Point.h"
@@ -28,7 +29,8 @@ public:
    */
   class Iterator : std::iterator<std::forward_iterator_tag, Point> {
   public:
-    Iterator();
+    Iterator(ImageTraversal *traversal, bool empty);
+    ~Iterator();
 
     Iterator & operator++();
     Point operator*();
@@ -40,8 +42,13 @@ public:
   private:
     /** @todo [Part 1] */
     /** add private members here if neccesary*/
+    std::set<Point> visited_;
+    ImageTraversal *traversal_;
+    bool empty_;
 
   };
+
+  virtual ~ImageTraversal() = default;
 
   /**
    * The begining of an iterator
@@ -75,6 +82,8 @@ public:
    * Virtual function. Derived class need to implement this
    */
   virtual bool empty() const = 0;
+
+  double calculateDelta(const PNG &png, const Point &p1, const Point &p2);
 
 private:
   static double calculateDelta(const HSLAPixel & p1, const HSLAPixel & p2);  

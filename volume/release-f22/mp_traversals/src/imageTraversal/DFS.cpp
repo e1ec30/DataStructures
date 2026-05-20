@@ -21,8 +21,9 @@
  * @param tolerance If the current point is too different (difference larger than tolerance) with the start point,
  * it will not be included in this DFS
  */
-DFS::DFS(const PNG & png, const Point & start, double tolerance) {  
+DFS::DFS(const PNG & png, const Point & start, double tolerance) : png_(&png), start_(start), tolerance_(tolerance), stack_() {  
   /** @todo [Part 1] */
+  add(start_);
 }
 
 /**
@@ -30,7 +31,7 @@ DFS::DFS(const PNG & png, const Point & start, double tolerance) {
  */
 ImageTraversal::Iterator DFS::begin() {
   /** @todo [Part 1] */
-  return ImageTraversal::Iterator();
+  return ImageTraversal::Iterator((ImageTraversal*)(new DFS(*png_, start_, tolerance_)), false);
 }
 
 /**
@@ -38,7 +39,7 @@ ImageTraversal::Iterator DFS::begin() {
  */
 ImageTraversal::Iterator DFS::end() {
   /** @todo [Part 1] */
-  return ImageTraversal::Iterator();
+  return ImageTraversal::Iterator(NULL, true);
 }
 
 /**
@@ -46,6 +47,11 @@ ImageTraversal::Iterator DFS::end() {
  */
 void DFS::add(const Point & point) {
   /** @todo [Part 1] */
+  if (point.x >= png_->width()) return;
+  if (point.y >= png_->height()) return;
+  if (ImageTraversal::calculateDelta(*png_, point, start_) >= tolerance_) return;
+  stack_.push(point);
+
 }
 
 /**
@@ -53,7 +59,11 @@ void DFS::add(const Point & point) {
  */
 Point DFS::pop() {
   /** @todo [Part 1] */
-  return Point(0, 0);
+  // return Point(0, 0);
+  Point p = stack_.top();
+  stack_.pop();
+  
+  return p;
 }
 
 /**
@@ -61,7 +71,8 @@ Point DFS::pop() {
  */
 Point DFS::peek() const {
   /** @todo [Part 1] */
-  return Point(0, 0);
+  return stack_.top();
+  // return Point(0, 0);
 }
 
 /**
@@ -69,5 +80,5 @@ Point DFS::peek() const {
  */
 bool DFS::empty() const {
   /** @todo [Part 1] */
-  return true;
+  return stack_.empty();
 }
