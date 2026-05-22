@@ -32,7 +32,10 @@ struct Point {
    * @return True for smaller, false for otherwise
    */
   bool operator<(const Point &other) const {
-    return (x < other.x || y < other.y);
+    // e1ec30: correcting this so I can use std::set to track visited nodes.
+    if (x != other.x) return x < other.x;
+    return y < other.y;
+    // return (x < other.x || y < other.y);
   }
 
   /**

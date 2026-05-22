@@ -1,6 +1,4 @@
 #include <cmath>
-#include <iterator>
-#include <iostream>
 
 #include "cs225/HSLAPixel.h"
 #include "cs225/PNG.h"
@@ -40,14 +38,23 @@ double ImageTraversal::calculateDelta(const PNG &png, const Point &p1, const Poi
 /**
  * Default iterator constructor.
  */
-ImageTraversal::Iterator::Iterator(ImageTraversal *traversal, bool empty) {
+ImageTraversal::Iterator::Iterator(ImageTraversal *traversal, Point start, bool empty) {
   /** @todo [Part 1] */
   traversal_ = traversal;
   empty_ = empty;
+  start_ = start;
+
+  if (!empty) current_ = traversal_->peek();
+
 }
+
 
 ImageTraversal::Iterator::~Iterator() {
   delete traversal_;
+}
+
+bool ImageTraversal::Iterator::isVisited(Point p) {
+  return (visited_.find(p) != visited_.end());
 }
 
 /**
@@ -57,21 +64,32 @@ ImageTraversal::Iterator::~Iterator() {
  */
 ImageTraversal::Iterator & ImageTraversal::Iterator::operator++() {
   /** @todo [Part 1] */
+
+  // e1ec30: current_ is always traversal_->peek, so pop it, mark it as visited, pop everything that has been visited, and insert it's neighbours.
   if (!traversal_->empty()) {
-    Point p = traversal_->peek();
+
     traversal_->pop();
+    Point p = current_;
+
     visited_.insert(p);
 
-    if(visited_.find(Point(p.x+1, p.y)) == visited_.end()) traversal_->add(Point(p.x+1, p.y));
-    if(visited_.find(Point(p.x, p.y+1)) == visited_.end()) traversal_->add(Point(p.x, p.y+1));
-    if(visited_.find(Point(p.x-1, p.y)) == visited_.end()) traversal_->add(Point(p.x-1, p.y));
-    if(visited_.find(Point(p.x, p.y-1)) == visited_.end()) traversal_->add(Point(p.x, p.y-1));
+    Point p1 = Point(p.x+1, p.y);
+    Point p2 = Point(p.x, p.y+1);
+    Point p3 = Point(p.x-1, p.y);
+    Point p4 = Point(p.x, p.y-1);
 
-    if (traversal_->empty()) empty_ = true;
-  }
-  else {
-    empty_ = true;
-  }
+    while(!traversal_->empty() && isVisited(traversal_->peek())) traversal_->pop();
+
+    if (!isVisited(p1)) traversal_->add(p1);
+    if (!isVisited(p2)) traversal_->add(p2);
+    if (!isVisited(p3)) traversal_->add(p3);
+    if (!isVisited(p4)) traversal_->add(p4);
+
+    if (!traversal_->empty()) current_ = traversal_->peek();
+    else empty_ = true;
+
+ }
+  else empty_ = true;
   return *this;
 }
 
@@ -82,7 +100,12 @@ ImageTraversal::Iterator & ImageTraversal::Iterator::operator++() {
  */
 Point ImageTraversal::Iterator::operator*() {
   /** @todo [Part 1] */
-  return traversal_->peek();
+  return Point(current()->x, current()->y);
+}
+
+const Point* ImageTraversal::Iterator::current() const{
+  if (this->empty_) return NULL;
+  return &current_;
 }
 
 /**
@@ -92,6 +115,6 @@ Point ImageTraversal::Iterator::operator*() {
  */
 bool ImageTraversal::Iterator::operator!=(const ImageTraversal::Iterator &other) {
   /** @todo [Part 1] */
-  return this->empty_ != other.empty_;
+  return this->current() != other.current();
 }
 

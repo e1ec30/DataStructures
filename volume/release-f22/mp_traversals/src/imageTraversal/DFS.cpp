@@ -23,7 +23,7 @@
  */
 DFS::DFS(const PNG & png, const Point & start, double tolerance) : png_(&png), start_(start), tolerance_(tolerance), stack_() {  
   /** @todo [Part 1] */
-  add(start_);
+  stack_.push(start_);
 }
 
 /**
@@ -31,7 +31,7 @@ DFS::DFS(const PNG & png, const Point & start, double tolerance) : png_(&png), s
  */
 ImageTraversal::Iterator DFS::begin() {
   /** @todo [Part 1] */
-  return ImageTraversal::Iterator((ImageTraversal*)(new DFS(*png_, start_, tolerance_)), false);
+  return ImageTraversal::Iterator((ImageTraversal*)(new DFS(*png_, start_, tolerance_)), start_, false);
 }
 
 /**
@@ -39,7 +39,7 @@ ImageTraversal::Iterator DFS::begin() {
  */
 ImageTraversal::Iterator DFS::end() {
   /** @todo [Part 1] */
-  return ImageTraversal::Iterator(NULL, true);
+  return ImageTraversal::Iterator(NULL, start_, true);
 }
 
 /**
@@ -50,6 +50,7 @@ void DFS::add(const Point & point) {
   if (point.x >= png_->width()) return;
   if (point.y >= png_->height()) return;
   if (ImageTraversal::calculateDelta(*png_, point, start_) >= tolerance_) return;
+  printf("DFS: adding: (%d, %d)\n", point.x, point.y);
   stack_.push(point);
 
 }

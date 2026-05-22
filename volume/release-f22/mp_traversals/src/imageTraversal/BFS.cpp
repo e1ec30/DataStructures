@@ -24,7 +24,7 @@ using namespace cs225;
  */
 BFS::BFS(const PNG & png, const Point & start, double tolerance) : png_(&png), start_(start), tolerance_(tolerance), queue_() {  
   /** @todo [Part 1] */
- add(start_);
+ queue_.push(start_);
 }
 
 /**
@@ -32,7 +32,7 @@ BFS::BFS(const PNG & png, const Point & start, double tolerance) : png_(&png), s
  */
 ImageTraversal::Iterator BFS::begin() {
   /** @todo [Part 1] */
-  return ImageTraversal::Iterator((ImageTraversal*)(new BFS(*png_, start_, tolerance_)), false);
+  return ImageTraversal::Iterator((ImageTraversal*)(new BFS(*png_, start_, tolerance_)), start_, false);
 }
 
 /**
@@ -40,7 +40,7 @@ ImageTraversal::Iterator BFS::begin() {
  */
 ImageTraversal::Iterator BFS::end() {
   /** @todo [Part 1] */
-  return ImageTraversal::Iterator(NULL, true);
+  return ImageTraversal::Iterator(NULL, start_, true);
 }
 
 /**
@@ -51,6 +51,7 @@ void BFS::add(const Point & point) {
   if (point.x >= png_->width()) return;
   if (point.y >= png_->height()) return;
   if (ImageTraversal::calculateDelta(*png_, point, start_) >= tolerance_) return;
+  printf("BFS: adding: (%d, %d)\n", point.x, point.y);
   queue_.push(point);
 }
 
