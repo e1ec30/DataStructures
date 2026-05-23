@@ -51,7 +51,7 @@ void BFS::add(const Point & point) {
   if (point.x >= png_->width()) return;
   if (point.y >= png_->height()) return;
   if (ImageTraversal::calculateDelta(*png_, point, start_) >= tolerance_) return;
-  printf("BFS: adding: (%d, %d)\n", point.x, point.y);
+  // printf("BFS: adding: (%d, %d)\n", point.x, point.y);
   queue_.push(point);
 }
 

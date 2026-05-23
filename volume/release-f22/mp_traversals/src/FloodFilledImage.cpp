@@ -1,12 +1,11 @@
+#include "cs225/HSLAPixel.h"
 #include "cs225/PNG.h"
-#include <list>
-#include <iostream>
 
 #include "colorPicker/ColorPicker.h"
 #include "imageTraversal/ImageTraversal.h"
 
-#include "Point.h"
 #include "Animation.h"
+#include <utility>
 #include "FloodFilledImage.h"
 
 using namespace cs225;
@@ -16,7 +15,7 @@ using namespace cs225;
  * 
  * @param png The starting image of a FloodFilledImage
  */
-FloodFilledImage::FloodFilledImage(const PNG & png) {
+FloodFilledImage::FloodFilledImage(const PNG & png): png_(png), operations_() {
   /** @todo [Part 2] */
 }
 
@@ -29,6 +28,7 @@ FloodFilledImage::FloodFilledImage(const PNG & png) {
  */
 void FloodFilledImage::addFloodFill(ImageTraversal & traversal, ColorPicker & colorPicker) {
   /** @todo [Part 2] */
+  operations_.push_back({&traversal, &colorPicker});
 }
 
 /**
@@ -50,8 +50,29 @@ void FloodFilledImage::addFloodFill(ImageTraversal & traversal, ColorPicker & co
  *   - ...
  *   - The final frame, after all pixels have been filed)
  */ 
-Animation FloodFilledImage::animate(unsigned frameInterval) const {
+Animation FloodFilledImage::animate(unsigned frameInterval) {
   Animation animation;
+
+  for (auto op: operations_) {
+    ImageTraversal *trav = op.first;
+    ColorPicker *picker = op.second;
+
+    //e1ec30: all I need now is how to edit my pixels
+
+    int i = 1;
+    animation.addFrame(png_);
+    for (auto it = trav->begin(); it != trav->end(); ++it, ++i) {
+      HSLAPixel pixel = picker->getColor((*it).x, (*it).y);
+      png_.getPixel((*it).x, (*it).y).h = pixel.h;
+      png_.getPixel((*it).x, (*it).y).s = pixel.s;
+      png_.getPixel((*it).x, (*it).y).l = pixel.l;
+      png_.getPixel((*it).x, (*it).y).a = pixel.a;
+
+      if (i % frameInterval == 0) animation.addFrame(png_);
+    }
+    animation.addFrame(png_);
+  }
+  
   /** @todo [Part 2] */
   return animation;
 }
