@@ -1,0 +1,77 @@
+[
+{
+  "directory": "/workspace/release-f22/mp_mosaics/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_mosaics/lib -I/workspace/release-f22/mp_mosaics/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/test.dir/tests/tests_part1.cpp.o -c /workspace/release-f22/mp_mosaics/tests/tests_part1.cpp",
+  "file": "/workspace/release-f22/mp_mosaics/tests/tests_part1.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_mosaics/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_mosaics/lib -I/workspace/release-f22/mp_mosaics/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/test.dir/tests/tests_part2.cpp.o -c /workspace/release-f22/mp_mosaics/tests/tests_part2.cpp",
+  "file": "/workspace/release-f22/mp_mosaics/tests/tests_part2.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_mosaics/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_mosaics/lib -I/workspace/release-f22/mp_mosaics/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/mosaics.dir/entry/mosaics.cpp.o -c /workspace/release-f22/mp_mosaics/entry/mosaics.cpp",
+  "file": "/workspace/release-f22/mp_mosaics/entry/mosaics.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_mosaics/build/lib",
+  "command": "/usr/bin/clang++    -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o -c /workspace/release-f22/mp_mosaics/lib/lodepng/lodepng.cpp",
+  "file": "/workspace/release-f22/mp_mosaics/lib/lodepng/lodepng.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_mosaics/build/lib",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_mosaics/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/cs225.dir/cs225/ColorSpace/ColorSpace.cpp.o -c /workspace/release-f22/mp_mosaics/lib/cs225/ColorSpace/ColorSpace.cpp",
+  "file": "/workspace/release-f22/mp_mosaics/lib/cs225/ColorSpace/ColorSpace.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_mosaics/build/lib",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_mosaics/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/cs225.dir/cs225/ColorSpace/Comparison.cpp.o -c /workspace/release-f22/mp_mosaics/lib/cs225/ColorSpace/Comparison.cpp",
+  "file": "/workspace/release-f22/mp_mosaics/lib/cs225/ColorSpace/Comparison.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_mosaics/build/lib",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_mosaics/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/cs225.dir/cs225/ColorSpace/Conversion.cpp.o -c /workspace/release-f22/mp_mosaics/lib/cs225/ColorSpace/Conversion.cpp",
+  "file": "/workspace/release-f22/mp_mosaics/lib/cs225/ColorSpace/Conversion.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_mosaics/build/lib",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_mosaics/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/cs225.dir/cs225/LUVAPixel.cpp.o -c /workspace/release-f22/mp_mosaics/lib/cs225/LUVAPixel.cpp",
+  "file": "/workspace/release-f22/mp_mosaics/lib/cs225/LUVAPixel.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_mosaics/build/lib",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_mosaics/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/cs225.dir/cs225/PNG.cpp.o -c /workspace/release-f22/mp_mosaics/lib/cs225/PNG.cpp",
+  "file": "/workspace/release-f22/mp_mosaics/lib/cs225/PNG.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_mosaics/build/lib",
+  "command": "/usr/bin/clang++    -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/util.dir/util/coloredout.cpp.o -c /workspace/release-f22/mp_mosaics/lib/util/coloredout.cpp",
+  "file": "/workspace/release-f22/mp_mosaics/lib/util/coloredout.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_mosaics/build/lib",
+  "command": "/usr/bin/clang++    -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/util.dir/util/util.cpp.o -c /workspace/release-f22/mp_mosaics/lib/util/util.cpp",
+  "file": "/workspace/release-f22/mp_mosaics/lib/util/util.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_mosaics/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_mosaics/src -I/workspace/release-f22/mp_mosaics/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/maptiles.cpp.o -c /workspace/release-f22/mp_mosaics/src/maptiles.cpp",
+  "file": "/workspace/release-f22/mp_mosaics/src/maptiles.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_mosaics/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_mosaics/src -I/workspace/release-f22/mp_mosaics/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/mosaiccanvas.cpp.o -c /workspace/release-f22/mp_mosaics/src/mosaiccanvas.cpp",
+  "file": "/workspace/release-f22/mp_mosaics/src/mosaiccanvas.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_mosaics/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_mosaics/src -I/workspace/release-f22/mp_mosaics/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/sourceimage.cpp.o -c /workspace/release-f22/mp_mosaics/src/sourceimage.cpp",
+  "file": "/workspace/release-f22/mp_mosaics/src/sourceimage.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_mosaics/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_mosaics/src -I/workspace/release-f22/mp_mosaics/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/tileimage.cpp.o -c /workspace/release-f22/mp_mosaics/src/tileimage.cpp",
+  "file": "/workspace/release-f22/mp_mosaics/src/tileimage.cpp"
+}
+]

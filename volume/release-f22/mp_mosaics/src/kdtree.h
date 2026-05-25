@@ -153,6 +153,7 @@ class KDTree
      * @param newPoints The vector of points to build your KDTree off of.
      */
     KDTree(const vector<Point<Dim>>& newPoints);
+    KDTreeNode* makeTree(int left, int right, int splitting_dim);
 
 
     /**
@@ -249,6 +250,7 @@ class KDTree
 
     /** Internal representation, root and size **/
     KDTreeNode *root;
+    std::vector<Point<Dim>> points_;
     size_t size;
 
     /** Helper function for grading */
@@ -261,7 +263,7 @@ class KDTree
     /**
      * @todo Add your helper functions here.
      */
+    void partition(int left, int right, int dimension, int idx);
 };
-
 #include "kdtree.hpp"
 #include "kdtree_extras.hpp"
