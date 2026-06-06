@@ -233,6 +233,7 @@ class KDTree
      *  tree.
      * @return The closest point to a in the KDTree.
      */
+    Point<Dim> findNearest(KDTree<Dim>::KDTreeNode *root, const Point<Dim> query, const Point<Dim> best, int dimension) const;
     Point<Dim> findNearestNeighbor(const Point<Dim>& query) const;
 
     // functions used for grading:
