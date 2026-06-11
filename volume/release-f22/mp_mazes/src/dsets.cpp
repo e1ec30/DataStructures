@@ -3,6 +3,7 @@
 #include <cstdio>
 
 void DisjointSets::addelements(int num) {
+	elems_.reserve(num);
 	for (int i = 0; i < num; i++) elems_.push_back(-1);
 }
 
@@ -37,5 +38,5 @@ void DisjointSets::setunion(int a, int b) {
 		elems_[root_a] = root_b;
 		elems_[root_b] = newSize;
 	}
-	printf("union(%d, %d): %d\n", a, b, newSize);
+	// printf("union(%d, %d): %d\n", a, b, newSize);
 }

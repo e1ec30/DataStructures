@@ -12,6 +12,7 @@
 
 int main()
 {
+    std::srand(time(nullptr));
     SquareMaze m;
     m.makeMaze(50, 50);
     std::cout << "MakeMaze complete" << std::endl;
@@ -22,6 +23,7 @@ int main()
     std::cout << "drawMaze complete" << std::endl;
 
     std::vector<int> sol = m.solveMaze();
+    // m.printSolution(sol);
     std::cout << "solveMaze complete" << std::endl;
 
     cs225::PNG* solved = m.drawMazeWithSolution();
