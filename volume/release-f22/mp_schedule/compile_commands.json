@@ -1,0 +1,47 @@
+[
+{
+  "directory": "/workspace/release-f22/mp_schedule/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_schedule/lib -I/workspace/release-f22/mp_schedule/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/test.dir/tests/tests_part1.cpp.o -c /workspace/release-f22/mp_schedule/tests/tests_part1.cpp",
+  "file": "/workspace/release-f22/mp_schedule/tests/tests_part1.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_schedule/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_schedule/lib -I/workspace/release-f22/mp_schedule/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/test.dir/tests/tests_part2.cpp.o -c /workspace/release-f22/mp_schedule/tests/tests_part2.cpp",
+  "file": "/workspace/release-f22/mp_schedule/tests/tests_part2.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_schedule/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_schedule/lib -I/workspace/release-f22/mp_schedule/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/test.dir/tests/tests_util.cpp.o -c /workspace/release-f22/mp_schedule/tests/tests_util.cpp",
+  "file": "/workspace/release-f22/mp_schedule/tests/tests_util.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_schedule/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_schedule/lib -I/workspace/release-f22/mp_schedule/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/main.dir/entry/main.cpp.o -c /workspace/release-f22/mp_schedule/entry/main.cpp",
+  "file": "/workspace/release-f22/mp_schedule/entry/main.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_schedule/build/lib",
+  "command": "/usr/bin/clang++    -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o -c /workspace/release-f22/mp_schedule/lib/lodepng/lodepng.cpp",
+  "file": "/workspace/release-f22/mp_schedule/lib/lodepng/lodepng.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_schedule/build/lib",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_schedule/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o -c /workspace/release-f22/mp_schedule/lib/cs225/HSLAPixel.cpp",
+  "file": "/workspace/release-f22/mp_schedule/lib/cs225/HSLAPixel.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_schedule/build/lib",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_schedule/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/cs225.dir/cs225/PNG.cpp.o -c /workspace/release-f22/mp_schedule/lib/cs225/PNG.cpp",
+  "file": "/workspace/release-f22/mp_schedule/lib/cs225/PNG.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_schedule/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_schedule/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/schedule.cpp.o -c /workspace/release-f22/mp_schedule/src/schedule.cpp",
+  "file": "/workspace/release-f22/mp_schedule/src/schedule.cpp"
+},
+{
+  "directory": "/workspace/release-f22/mp_schedule/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/mp_schedule/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/utils.cpp.o -c /workspace/release-f22/mp_schedule/src/utils.cpp",
+  "file": "/workspace/release-f22/mp_schedule/src/utils.cpp"
+}
+]

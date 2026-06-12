@@ -1,6 +1,7 @@
 #include "schedule.h"
 #include "tests_util.h"
 #include <map>
+#include <set>
 #include <string>
 #include <catch2/catch_test_macros.hpp>
 
