@@ -4,6 +4,10 @@
  * stacks and queues portion of the lab.
  */
 
+#include "quackfun.h"
+#include <algorithm>
+#include <cstdio>
+#include <utility>
 namespace QuackFun {
 
 /**
@@ -26,14 +30,23 @@ namespace QuackFun {
  * @return  The sum of all the elements in the stack, leaving the original
  *          stack in the same state (unchanged).
  */
-template <typename T>
-T sum(stack<T>& s)
-{
+template <typename T> T sum(stack<T> &s) {
 
-    // Your code here
-    return T(); // stub return value (0 for primitive types). Change this!
-                // Note: T() is the default value for objects, and 0 for
-                // primitive types
+  // Your code here
+
+  if (s.size() == 1)
+    return s.top();
+  else {
+    T top = s.top();
+    s.pop();
+    T result = sum(s);
+    result += top;
+    s.push(top);
+    return result;
+  }
+  // stub return value (0 for primitive types). Change this!
+  // Note: T() is the default value for objects, and 0 for
+  // primitive types
 }
 
 /**
@@ -50,14 +63,27 @@ T sum(stack<T>& s)
  * `stack<char>`! No other stack or queue local objects may be declared. Note
  * that you may still declare and use other local variables of primitive types.
  *
- * @param input The queue representation of a string to check for balanced brackets in
+ * @param input The queue representation of a string to check for balanced
+ * brackets in
  * @return      Whether the input string had balanced brackets
  */
-bool isBalanced(queue<char> input)
-{
+bool isBalanced(queue<char> input) {
 
-    // @TODO: Make less optimistic
-    return true;
+  // @TODO: Make less optimistic
+  stack<char> s;
+  while (!input.empty()) {
+    char next = input.front();
+    input.pop();
+    if (next == '[')
+      s.push(next);
+    if (next == ']') {
+      if (s.empty())
+        return false;
+      else
+        s.pop();
+    }
+  }
+  return s.empty();
 }
 
 /**
@@ -75,12 +101,70 @@ bool isBalanced(queue<char> input)
  *
  * @param q A queue of items to be scrambled
  */
-template <typename T>
-void scramble(queue<T>& q)
-{
-    stack<T> s;
-    // optional: queue<T> q2;
+template <typename T> void scramble(queue<T> &q) {
+  static int done = 0;
+  static int n = 1;
+  stack<T> s{};
+  queue<T> q2{};
 
-    // Your code here
+  // printf("size: %zu\n", q.size());
+  // while (!q.empty()) {
+  //   printf("%d, ", q.front());
+  //   s.push(q.front());
+  //   q2.push(q.front());
+  //   q.pop();
+  // }
+  // puts("");
+  //
+  // printf("stack: ");
+  //
+
+  printf("done: %d, q.size(): %zu, n: %d\n", done, q.size(), n);
+  if (done >= (int)q.size()) {
+      done = 0;
+      n = 1;
+      return;
+  }
+  else {
+    // int x = done;
+    // e1ec30: save the work that's already been done.
+    // while (x-- > 0 && !q.empty()) {
+    //   printf("popping: %d\n", q.front());
+    //   q2.push(q.front());
+    //   q.pop();
+    // }
+
+    // e1ec30: check if we need to swap
+    bool even = (n%2 == 0);
+    if (done + n > (int)q.size()) n = q.size() - done;
+    int x = n;
+    if (even) {
+      while (x-- > 0 && !q.empty()) {
+        printf("popping: %d\n", q.front());
+        s.push(q.front());
+        q.pop();
+      }
+
+      while (!s.empty()) {
+        printf("pushing: %d\n", s.top());
+        q.push(s.top());
+        s.pop();
+      }
+    }
+    else {
+        x = n;
+        while (x-- > 0 && !q.empty()) {
+            printf("popping: %d\n", q.front());
+            printf("pushing: %d\n", q.front());
+            q.push(q.front());
+            q.pop();
+        }
+    }
+    done += n;
+    n += 1;
+    scramble(q);
+  }
+
+  // Your code here
 }
-}
+} // namespace QuackFun
