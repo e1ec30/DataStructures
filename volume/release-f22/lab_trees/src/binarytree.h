@@ -37,7 +37,8 @@ class BinaryTree
             Node(const T& element) : elem(element), left(NULL), right(NULL)
             { /* nothing */
             }
-        };
+
+       };
 
         /**
          * Constructor to create an empty tree.
@@ -120,6 +121,7 @@ class BinaryTree
          *  (not creating a flipped copy).
          */
         void mirror();
+        void mirror(Node *);
 
         /**
          * isOrdered() function iterative version
@@ -145,6 +147,10 @@ class BinaryTree
          * @param treeVector stores nodes in order
          */
         void inOrder(std::vector<T>& treeVector);
+
+
+        // e1ec30: return the biggest value found in a subtree.
+        T isOrderedRecursive(Node *, T, bool) const;
 
     protected:
         Node* root;

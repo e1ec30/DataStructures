@@ -27,6 +27,14 @@ class InorderTraversal : public TreeTraversal<T> {
     {
       stack.push(root);	
       // your code here
+
+      typename BinaryTree<T>::Node  *n = root->left;
+
+      // e1ec30: push in all the left children so that they'll go first;
+      while (n != NULL) {
+          stack.push(n);
+          n = n->left;
+      }
     }
 
     /**
@@ -61,6 +69,14 @@ class InorderTraversal : public TreeTraversal<T> {
      */	
     void add(typename BinaryTree<T>::Node *& treeNode) {
       // your code here
+      //
+      // e1ec30: when removing a node, add it's right child, and then go left and add everything;
+      //
+      typename BinaryTree<T>::Node *rc = treeNode->right;
+      while (rc != NULL) {
+          stack.push(rc);
+          rc = rc->left;
+      }
       return;	
     }
 

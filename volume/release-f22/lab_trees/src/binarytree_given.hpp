@@ -9,6 +9,7 @@
  */
 
 #include "binarytree/printtree.h"
+#include "binarytree.h"
 
 template <typename T>
 BinaryTree<T>::BinaryTree()
