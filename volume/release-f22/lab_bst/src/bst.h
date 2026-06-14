@@ -160,6 +160,7 @@ class BST
      * @return A BST<K, V>::Node* & object pointing to the matching node
      */
     struct BST<K, V>::Node* &  find(Node*& node, const K& key);
+    struct BST<K, V>::Node* &  rightmost(Node*& node);
 
     /**
     * Private helper function for the public height function.
