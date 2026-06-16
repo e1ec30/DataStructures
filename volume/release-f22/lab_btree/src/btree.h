@@ -155,6 +155,7 @@ class BTree
          */
         BTreeNode(bool is_leaf, unsigned int order) : is_leaf(is_leaf)
         {
+            // printf("constructing: %p\n", (void*)this);
             elements.reserve(order + 1);
             children.reserve(order + 2);
         }
@@ -342,8 +343,12 @@ template <class T, class C>
 size_t insertion_idx(const std::vector<T>& elements, const C& val)
 {
     /* TODO Your code goes here! */
+    size_t i = 0;
+    for (i = 0; i < elements.size(); i++) {
+        if (elements[i] > val || elements[i] == val) break;
+    }
 
-    return 5;
+    return i;
 }
 
 #include "btree_given.hpp"

@@ -113,6 +113,7 @@ bool BTree<K, V>::is_valid(const BTreeNode* subroot, std::vector<DataPair>& data
 template <class K, class V>
 void BTree<K, V>::clear(BTreeNode* subroot)
 {
+    // printf("deleting: %p\n", (void*)subroot);
     if (!subroot->is_leaf) {
         for (auto child : subroot->children) {
             clear(child);
