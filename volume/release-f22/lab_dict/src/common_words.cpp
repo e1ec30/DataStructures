@@ -48,12 +48,22 @@ void CommonWords::init_file_word_maps(const vector<string>& filenames)
         // file
         vector<string> words = file_to_vector(filenames[i]);
         /* Your code goes here! */
+        map<string, unsigned int> freqs;
+        for (auto& word: words) {
+            freqs[word]++;
+        }
+        file_word_maps[i] = freqs;
     }
 }
 
 void CommonWords::init_common()
 {
     /* Your code goes here! */
+    for (auto &freqs : file_word_maps) {
+        for (auto &word: freqs) {
+            common[word.first] += 1;
+        }
+    }
 }
 
 /**
@@ -65,6 +75,22 @@ vector<string> CommonWords::get_common_words(unsigned int n) const
 {
     vector<string> out;
     /* Your code goes here! */
+    for (auto &word: common) {
+        unsigned int num_files = word.second;
+        string the_word = word.first;
+
+        // if it's present in all files.
+        if (num_files == file_word_maps.size()) {
+            bool push = true;
+            // check if all of its frequencies are at least n
+            for (auto &file: file_word_maps) {
+                if (file.find(the_word) != file.end() && file.find(the_word)->second < n) {
+                    push = false;
+                }
+            }
+            if (push) out.push_back(the_word);
+        }
+    }
     return out;
 }
 
