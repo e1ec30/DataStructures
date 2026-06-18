@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/workspace/release-f22/lab_heaps/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/lab_heaps/lib -I/workspace/release-f22/lab_heaps/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/test.dir/tests/tests.cpp.o -c /workspace/release-f22/lab_heaps/tests/tests.cpp",
+  "file": "/workspace/release-f22/lab_heaps/tests/tests.cpp"
+},
+{
+  "directory": "/workspace/release-f22/lab_heaps/build",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/lab_heaps/lib -I/workspace/release-f22/lab_heaps/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/main.dir/entry/main.cpp.o -c /workspace/release-f22/lab_heaps/entry/main.cpp",
+  "file": "/workspace/release-f22/lab_heaps/entry/main.cpp"
+},
+{
+  "directory": "/workspace/release-f22/lab_heaps/build/lib",
+  "command": "/usr/bin/clang++    -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o -c /workspace/release-f22/lab_heaps/lib/lodepng/lodepng.cpp",
+  "file": "/workspace/release-f22/lab_heaps/lib/lodepng/lodepng.cpp"
+},
+{
+  "directory": "/workspace/release-f22/lab_heaps/build/lib",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/lab_heaps/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o -c /workspace/release-f22/lab_heaps/lib/cs225/HSLAPixel.cpp",
+  "file": "/workspace/release-f22/lab_heaps/lib/cs225/HSLAPixel.cpp"
+},
+{
+  "directory": "/workspace/release-f22/lab_heaps/build/lib",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/lab_heaps/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/cs225.dir/cs225/PNG.cpp.o -c /workspace/release-f22/lab_heaps/lib/cs225/PNG.cpp",
+  "file": "/workspace/release-f22/lab_heaps/lib/cs225/PNG.cpp"
+},
+{
+  "directory": "/workspace/release-f22/lab_heaps/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/lab_heaps/src -I/workspace/release-f22/lab_heaps/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/coloredout.cpp.o -c /workspace/release-f22/lab_heaps/src/coloredout.cpp",
+  "file": "/workspace/release-f22/lab_heaps/src/coloredout.cpp"
+},
+{
+  "directory": "/workspace/release-f22/lab_heaps/build/src",
+  "command": "/usr/bin/clang++  -I/workspace/release-f22/lab_heaps/src -I/workspace/release-f22/lab_heaps/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/printheap.cpp.o -c /workspace/release-f22/lab_heaps/src/printheap.cpp",
+  "file": "/workspace/release-f22/lab_heaps/src/printheap.cpp"
+}
+]
