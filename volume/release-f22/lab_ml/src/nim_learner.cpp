@@ -4,8 +4,11 @@
  */
 
 #include "nim_learner.h"
+#include "nim_graph/edge.h"
 #include <ctime>
-
+#include <sstream>
+#include <string>
+#include <unordered_map>
 
 /**
  * Constructor to create a game of Nim with `startingTokens` starting tokens.
@@ -25,7 +28,36 @@
  * @param startingTokens The number of starting tokens in the game of Nim.
  */
 NimLearner::NimLearner(unsigned startingTokens) : g_(true, true) {
-    /* Your code goes here! */
+  /* Your code goes here! */
+  int remaining_tokens = startingTokens;
+
+  while (remaining_tokens >= 0) {
+    Vertex p1_rem("p1-" + to_string(remaining_tokens));
+    Vertex p2_rem("p2-" + to_string(remaining_tokens));
+    Vertex p1_1("p2-" + to_string(remaining_tokens - 1));
+    Vertex p1_2("p2-" + to_string(remaining_tokens - 2));
+    Vertex p2_1("p1-" + to_string(remaining_tokens - 1));
+    Vertex p2_2("p1-" + to_string(remaining_tokens - 2));
+    if (remaining_tokens == 0) {
+      g_.insertVertex(p1_rem);
+      g_.insertVertex(p2_rem);
+    } else {
+      if (remaining_tokens >= 1) {
+        g_.insertEdge(p1_rem, p1_1);
+        g_.insertEdge(p2_rem, p2_1);
+        g_.setEdgeWeight(p1_rem, p1_1, 0);
+        g_.setEdgeWeight(p2_rem, p2_1, 0);
+      }
+      if (remaining_tokens >= 2) {
+        g_.insertEdge(p1_rem, p1_2);
+        g_.insertEdge(p2_rem, p2_2);
+        g_.setEdgeWeight(p1_rem, p1_2, 0);
+        g_.setEdgeWeight(p2_rem, p2_2, 0);
+      }
+    }
+    remaining_tokens--;
+  }
+  startingVertex_ = Vertex("p1-" + to_string(startingTokens));
 }
 
 /**
@@ -39,7 +71,32 @@ NimLearner::NimLearner(unsigned startingTokens) : g_(true, true) {
  */
 std::vector<Edge> NimLearner::playRandomGame() const {
   vector<Edge> path;
- /* Your code goes here! */
+  /* Your code goes here! */
+  vector<Edge> edges = g_.getEdges();
+  Edge curr;
+
+  // get the starting edge
+  for (auto edge : edges) {
+    if (edge.source == startingVertex_) {
+      curr = edge;
+      break;
+    }
+  }
+
+  while (curr.dest.back() != '0') {
+    vector<Edge> possible;
+    possible.reserve(2);
+    for (auto edge : edges) {
+      if (edge.source == curr.dest) {
+        possible.push_back(edge);
+      }
+    }
+    int r = rand() % possible.size();
+    path.push_back(curr);
+    curr = possible[r];
+  }
+  path.push_back(curr);
+
   return path;
 }
 
@@ -59,21 +116,39 @@ std::vector<Edge> NimLearner::playRandomGame() const {
  *
  * @param path A path through the a game of Nim to learn.
  */
-void NimLearner::updateEdgeWeights(const std::vector<Edge> & path) {
- /* Your code goes here! */
+void NimLearner::updateEdgeWeights(const std::vector<Edge> &path) {
+  /* Your code goes here! */
+  Vertex v = path.back().dest;
+  if (v.back() == '0') {
+    string winner = path.back().source.substr(0, 2);
+    for (auto edge: path) {
+      // printf("(%s, %s, %d)\n", edge.source.c_str(), edge.dest.c_str(), edge.getWeight());
+      int oldweight = g_.getEdgeWeight(edge.source, edge.dest);
+      if (edge.source.substr(0, 2) == winner) {
+        g_.setEdgeWeight(edge.source, edge.dest, oldweight+1);
+      }
+      else {
+        g_.setEdgeWeight(edge.source, edge.dest, oldweight-1);
+      }
+      // printf("(%s, %s, %d)\n", edge.source.c_str(), edge.dest.c_str(), edge.getWeight());
+    }
+  }
 }
 
 /**
  * Label the edges as "WIN" or "LOSE" based on a threshold.
  */
 void NimLearner::labelEdgesFromThreshold(int threshold) {
-  for (const Vertex & v : g_.getVertices()) {
-    for (const Vertex & w : g_.getAdjacent(v)) {
+  for (const Vertex &v : g_.getVertices()) {
+    for (const Vertex &w : g_.getAdjacent(v)) {
       int weight = g_.getEdgeWeight(v, w);
 
       // Label all edges with positve weights as "WINPATH"
-      if (weight > threshold)           { g_.setEdgeLabel(v, w, "WIN"); }
-      else if (weight < -1 * threshold) { g_.setEdgeLabel(v, w, "LOSE"); }
+      if (weight > threshold) {
+        g_.setEdgeLabel(v, w, "WIN");
+      } else if (weight < -1 * threshold) {
+        g_.setEdgeLabel(v, w, "LOSE");
+      }
     }
   }
 }
@@ -83,6 +158,4 @@ void NimLearner::labelEdgesFromThreshold(int threshold) {
  *
  * @returns A constant reference to the state space graph.
  */
-const Graph & NimLearner::getGraph() const {
-  return g_;
-}
+const Graph &NimLearner::getGraph() const { return g_; }
